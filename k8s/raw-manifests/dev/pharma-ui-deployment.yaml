@@ -17,10 +17,10 @@ spec:
     spec:
       serviceAccountName: pharma-ui
       securityContext:
-        runAsNonRoot: true
+        runAsNonRoot: false #true
       containers:
         - name: pharma-ui
-          image: 873135413040.dkr.ecr.us-east-1.amazonaws.com/pharma-ui:sha-0d828ec
+          image: 489661996455.dkr.ecr.ap-southeast-2.amazonaws.com/pharma-ui:sha-6a602e1
           securityContext:
             readOnlyRootFilesystem: true
           ports:
