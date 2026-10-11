@@ -5,6 +5,8 @@ metadata:
   namespace: dev
   labels:
     app: myschool-v3
+  annotations:
+    cloud.google.com/backend-config: '{"default":"myschool-backendconfig"}'
 spec:
   type: ClusterIP
   selector:
@@ -12,3 +14,18 @@ spec:
   ports:
     - port: 80
       targetPort: 8002
+---
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: myschool-backendconfig
+  namespace: dev
+spec:
+  healthCheck:
+    checkIntervalSec: 30
+    timeoutSec: 10
+    healthyThreshold: 1
+    unhealthyThreshold: 3
+    type: HTTP
+    requestPath: /pupil
+    port: 8002
