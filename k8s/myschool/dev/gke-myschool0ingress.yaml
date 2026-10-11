@@ -17,3 +17,17 @@ spec:
             name: myschool-service-v3
             port:
               number: 80
+      - path: /pupil_add_student
+        pathType: Prefix
+        backend:
+          service:
+            name: myschool-service-v3
+            port:
+              number: 80
+      - path: /pupil_delete_student
+        pathType: Prefix
+        backend:
+          service:
+            name: myschool-service-v3
+            port:
+              number: 80
