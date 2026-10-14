@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: myschool-deployment-v3
-    namespace: dev
-spec:    
-    replicas: 1
-    selector:
-      matchLabels:
+  name: myschool-deployment-v3
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myschool-v3
+  template:
+    metadata:
+      labels:
         app: myschool-v3
-    template:
-      metadata:
-        labels:
-          app: myschool-v3
-      spec:       
-        containers:
+    spec:
+      containers:
         - name: myschool-v3
           #image: kanu17/my-school-pupil:2.0.0
-          image: australia-southeast2-docker.pkg.dev/project-4961abc8-49a2-4442-aef/my-school-repo/mongo-pupil-app:sha-adb1f75
+          image: australia-southeast2-docker.pkg.dev/project-4961abc8-49a2-4442-aef/my-school-repo/mongo-pupil-app:sha-2292ba6
           envFrom:
-           - secretRef:
-               name: app-mongodb-credentials
-          imagePullPolicy: Always 
+            - secretRef:
+                name: app-mongodb-credentials
+          imagePullPolicy: Always
           ports:
-          - containerPort: 8002
+            - containerPort: 8002
