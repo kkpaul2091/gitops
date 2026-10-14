@@ -31,3 +31,10 @@ spec:
             name: myschool-service-v3
             port:
               number: 80
+      - path: /static
+        pathType: Prefix
+        backend:
+          service:
+            name: myschool-service-v3
+            port:
+              number: 80
