@@ -16,7 +16,7 @@ spec:
       containers:
         - name: myschool-v3
           #image: kanu17/my-school-pupil:2.0.0
-          image: australia-southeast2-docker.pkg.dev/project-4961abc8-49a2-4442-aef/my-school-repo/mongo-pupil-app:sha-366b55a
+          image: australia-southeast2-docker.pkg.dev/project-4961abc8-49a2-4442-aef/my-school-repo/mongo-pupil-app:sha-7bbe759
           envFrom:
             - secretRef:
                 name: app-mongodb-credentials
