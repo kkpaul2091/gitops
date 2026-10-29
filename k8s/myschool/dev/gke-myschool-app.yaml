@@ -18,11 +18,7 @@ spec:
       containers:
         - name: myschool-v3
           #image: kanu17/my-school-pupil:2.0.0
-<<<<<<< HEAD
-          image: australia-southeast2-docker.pkg.dev/project-4961abc8-49a2-4442-aef/my-school-repo/mongo-pupil-app:sha-7bbe759
-=======
           image: australia-southeast2-docker.pkg.dev/project-c2779828-d28b-45b8-810/my-school-repo/mongo-pupil-app:sha-1b76258
->>>>>>> bbc0925 (GITPOS  at:  Thursday, October 29, 2026 at 10:50 AM)
           envFrom:
             - secretRef:
                 name: app-mongodb-credentials
